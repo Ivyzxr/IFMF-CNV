@@ -5,7 +5,7 @@ Features
 Efficient CNV detection algorithm.
 Supports multiple single-cell sequencing data formats.
 
-Installation
+
 Use MATLAB to run the code.
 
 How to Use the Code
