@@ -11,3 +11,6 @@ Use MATLAB to run the code.
 How to Use the Code
 Simply run batch_makedata.m. Please be sure to modify the file paths accordingly.
 Example File: 0.2x-d1 is provided as an example file.
+
+
+![Uploading Fig1.jpg…]()
