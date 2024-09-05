@@ -1,4 +1,4 @@
-![Fig1](https://github.com/user-attachments/assets/4a6228b5-b20a-4c8a-9430-140b70e35896)
+
 IFMF-CNV is a tool based on the Isolation Forest algorithm for detecting Copy Number Variations (CNVs) in single-cell sequencing data.
 
 Features
