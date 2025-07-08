@@ -1,12 +1,12 @@
 clear
 
 
-cndir='D:\西安交通大学wps\cnvnator\0.2xd\0.2xd3';
+cndir='D:\cnvnator\0.2xd\0.2xd3';
 addpath(cndir);   
 filename1=strcat('copynumber.bed');
 cn=importdata(filename1);
 cn=cn.data;
-cndir2='D:\西安交通大学wps\cnvnator\0.2xd';
+cndir2='D:\cnvnator\0.2xd';
 addpath(cndir2);  
 data=strcat('1000bins.xlsx'); 
 data=readtable(data);
@@ -52,24 +52,24 @@ cng1=cn(index1,:);
         end
       end
 
-% % 设定输入和输出目录   
+% % set input and output   
 all_predictions = zeros(size(data, 1), 30);  
-% 设定结果保存文件  
-results_file = 'D:\西安交通大学wps\cnvnator\0.2xd\0.2xd3\results.txt';  
+% set save file  
+results_file = 'D:\cnvnator\0.2xd\0.2xd3\results.txt';  
 fid = fopen(results_file, 'w');  
 if fid == -1  
     error('无法打开文件 %s 用于写入', results_file);  
 end  
   
-% 写入标题行  
+% write title  
 fprintf(fid, 'Precision\tRecall\tSpecificity\tF1 Score\n');  
  
 for i = 0:29 
-    % 构造文件名  
+    % create filename  
     filename = sprintf('call.0.2xd_%d_processed.txt', i);  
     data2 = fullfile(cndir, filename);  
       
-    % 导入数据  
+    % Import data 
     data2 = importdata(data2);  
     data2 = data2.data;  
     for j=1:1:length(data2)
@@ -101,14 +101,14 @@ fp = sum(predictions == 1 & ADLabels == 0);
 fn = sum(predictions == 0 & (ADLabels == 1 | ADLabels == -1));
 tn = sum(predictions == 0 & ADLabels == 0);
 
-% 计算 Precision, Recall, F1 Score
+% Caculate Precision, Recall, F1 Score
 precision = tp / (tp + fp)
 recall = tp / (tp + fn)
 specificity = tn / (tn + fp)
 f1_score = 2 * (precision * recall) / (precision + recall)
 all_predictions(:, i+1) = data(:, 4); 
 
-    % 写入结果到文件  
+    % Write  
     fprintf(fid, '%.4f\t%.4f\t%.4f\t%.4f\n', precision, recall, specificity, f1_score);  
    
 end  
