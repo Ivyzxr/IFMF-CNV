@@ -95,7 +95,7 @@ ADLabels=data(:,3);
 predictions = data(:,4);
 
 
-   % 计算 TP, FP, FN
+   % calculate TP, FP, FN
 tp = sum(predictions == 1 & (ADLabels == 1 | ADLabels == -1));
 fp = sum(predictions == 1 & ADLabels == 0);
 fn = sum(predictions == 0 & (ADLabels == 1 | ADLabels == -1));
@@ -113,7 +113,7 @@ all_predictions(:, i+1) = data(:, 4);
    
 end  
 
-% predictions_filename = 'D:\西安交通大学wps\cnvnator\0.2xd\predictions3.csv'; % 保存的文件名  
+% predictions_filename = 'D:\cnvnator\0.2xd\predictions3.csv'; % 保存的文件名  
 % csvwrite(predictions_filename, all_predictions); % 使用csvwrite保存为CSV格式
 % % 关闭结果文件  
 % fclose(fid);  
