@@ -1,11 +1,13 @@
+# Multi-feature-based Isolation Forest copy number variation detector (MFIF-CNV) for single-cell DNA sequencing
 
-IFMF-CNV is a tool based on the Isolation Forest algorithm for detecting Copy Number Variations (CNVs) in single-cell sequencing data.
+MFIF-CNV is a CNV detection tool based on the Isolation Forest algorithm, integrating read depth (RD) and paired-end mapping (PEM) signals for single-cell DNA sequencing data.
 
-Features
+## Features
+Multi-feature CNV detection based on RD and PEM signals.
 Efficient CNV detection algorithm.
 Supports multiple single-cell sequencing data formats.
 
-
+## How to Use the Code:
 How to Use the Code:
 Simply run batch_makedata.m. Please be sure to modify the file paths accordingly.
 Example File: 0.2x-d1 is provided as an example file.
